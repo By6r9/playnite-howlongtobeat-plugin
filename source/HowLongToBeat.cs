@@ -364,14 +364,19 @@ namespace HowLongToBeat
                     Description = resources.GetString("LOCCommonClearAllDatas"),
                     Action = (mainMenuItem) =>
                     {
-                        if (PluginDatabase.ClearDatabase())
-                        {
-                            PlayniteApi.Dialogs.ShowMessage(resources.GetString("LOCCommonDataRemove"), "HowLongToBeat");
-                        }
-                        else
-                        {
-                            PlayniteApi.Dialogs.ShowErrorMessage(resources.GetString("LOCCommonDataErrorRemove"), "HowLongToBeat");
-                        }
+                        if (PlayniteApi.Dialogs.ShowMessage("Please Confirm Removing All Data", "Clearing Data", MessageBoxButton.YesNo, MessageBoxImage.Question) != MessageBoxResult.No)
+                            {
+                                if (PluginDatabase.ClearDatabase())
+                                    {
+                                        PlayniteApi.Dialogs.ShowMessage(resources.GetString("LOCCommonDataRemove"), "HowLongToBeat");
+                                    }
+                                else
+                                {
+                                    PlayniteApi.Dialogs.ShowErrorMessage(resources.GetString("LOCCommonDataErrorRemove"), "HowLongToBeat");
+                                 }
+                            }
+                        
+
                     }
                 },
 

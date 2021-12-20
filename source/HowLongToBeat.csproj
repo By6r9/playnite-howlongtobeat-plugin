@@ -50,7 +50,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="akr.WPF.Controls.ColorPicker">
-      <HintPath>playnite-plugincommon\CommonPluginsResources\Resources\akr.WPF.Controls.ColorPicker.dll</HintPath>
+      <HintPath>..\..\playnite-plugincommon\CommonPluginsResources\Resources\akr.WPF.Controls.ColorPicker.dll</HintPath>
     </Reference>
     <Reference Include="AngleSharp, Version=0.9.9.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
       <HintPath>packages\AngleSharp.0.9.9\lib\net45\AngleSharp.dll</HintPath>
@@ -374,7 +374,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="playnite-plugincommon\CommonPluginsResources\CommonPluginsResources.csproj">
+    <ProjectReference Include="..\..\playnite-plugincommon\CommonPluginsResources\CommonPluginsResources.csproj">
       <Project>{4effe926-9c64-4750-a399-f344710edc09}</Project>
       <Name>CommonPluginsResources</Name>
     </ProjectReference>
@@ -395,8 +395,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <Import Project="playnite-plugincommon\CommonPlayniteShared\CommonPlayniteShared.projitems" Label="Shared" />
-  <Import Project="playnite-plugincommon\CommonPluginsShared\CommonPluginsShared.projitems" Label="Shared" />
+  <Import Project="C:\Users\Ja\Source\Playnite\HowLongToBeat\playnite-plugincommon\CommonPlayniteShared\CommonPlayniteShared.projitems" Label="Shared" />
+  <Import Project="C:\Users\Ja\Source\Playnite\HowLongToBeat\playnite-plugincommon\CommonPluginsShared\CommonPluginsShared.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>powershell -ExecutionPolicy Unrestricted $(SolutionDir)..\build\build.ps1 -ConfigurationName $(ConfigurationName) -OutDir $(SolutionDir)$(OutDir)</PostBuildEvent>
